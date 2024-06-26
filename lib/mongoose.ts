@@ -6,7 +6,7 @@ export const connectToDatabase = async () => {
   mongoose.set("strict", true);
 
   if (!process.env.MONGODB_URI) {
-    return console.warn("Missing MongoDB URI");
+    return console.log("Missing MongoDB URI");
   }
 
   if (isConnected) {
