@@ -11,7 +11,7 @@ import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 
-const Question = async ({ params }) => {
+const Question = async ({ params }: any) => {
   const { userId: clerkId } = auth();
 
   let mongoUser;
