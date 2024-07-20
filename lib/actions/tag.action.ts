@@ -43,7 +43,12 @@ export async function getAllTags(params: GetAllTagsParams) {
     const query: FilterQuery<typeof Tag> = {};
 
     if (searchQuery) {
-      query.$or = [{ name: { $regex: new RegExp(searchQuery, "i") } }];
+      const escapedSearchQuery = searchQuery.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&"
+      );
+
+      query.$or = [{ name: { $regex: new RegExp(escapedSearchQuery, "i") } }];
     }
 
     let sortOptions = {};
