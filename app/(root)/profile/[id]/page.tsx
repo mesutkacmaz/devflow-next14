@@ -29,7 +29,7 @@ const ProfileDetails = async ({ params, searchParams }: URLProps) => {
             alt="profile picture"
           />
 
-          <div className="mt-3">
+          <div className="mt-3 ">
             <h2 className="h2-bold text-dark100_light900">
               {userInfo.user.name}
             </h2>
@@ -37,7 +37,7 @@ const ProfileDetails = async ({ params, searchParams }: URLProps) => {
               @{userInfo.user.username}
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center justify-start">
+            <div className="mt-5 flex flex-wrap items-center justify-start gap-5">
               {userInfo.user.portfolioWebsite && (
                 <ProfileLink
                   imgUrl="/assets/icons/link.svg"
@@ -97,7 +97,10 @@ const ProfileDetails = async ({ params, searchParams }: URLProps) => {
               Answers
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="top-posts">
+          <TabsContent
+            value="top-posts"
+            className="mt-5 flex w-full flex-col gap-6"
+          >
             <QuestionTab
               searchParams={searchParams}
               userId={userInfo.user._id}

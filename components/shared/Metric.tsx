@@ -5,7 +5,7 @@ interface Props {
   imgUrl: string;
   alt: string;
   value: string | number;
-  title: string;
+  title?: string | null;
   href?: string;
   textStyles?: string;
   isAuthor?: boolean;
